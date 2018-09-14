@@ -35,7 +35,7 @@ def vet_function():
                                 continue
 
                 elif start == "3":
-                        if len(check_out_info) < 1:
+                        if len(check_out_info) > 0:
                                 print("There are no pets in the system at this time.")
                                 continue
                         elif len(check_out_info) >= 1:
