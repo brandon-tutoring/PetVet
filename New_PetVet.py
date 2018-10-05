@@ -92,7 +92,7 @@ def vet_function():
                             find_name = input("What is the name of the pet you would like to find?\n")
                             for i in range(0, len(check_out_info)):
                                 if (check_out_info[i]["name"]) == find_name:
-                                    print_pet(i)
+                                    print_pet(check_out_info[i])
                                 elif (check_out_info[i]["name"]) != find_name:
                                     print("That pet is not checked in.")
                         else:
