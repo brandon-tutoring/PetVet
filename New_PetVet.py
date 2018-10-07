@@ -46,8 +46,8 @@ def vet_function():
                 elif start == "3":
                         if len(check_out_info) == 0:
                                 print("There are no pets in the system at this time.")
-                        elif len(check_out_info) >= 1:
-                                for i in range(0, len(check_out_info)-1):
+                        else:
+                                for i in range(0, len(check_out_info)):
                                         print_pet(i)
 
                 elif start == "4":
@@ -107,6 +107,5 @@ def vet_function():
                     print("That was not a valid response, please try again.")
                     vet_function()
 
-
+                print()
 vet_function()
-
