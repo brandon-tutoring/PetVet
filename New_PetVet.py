@@ -2,7 +2,7 @@ check_out_info = []
 animals_we_take = ["dog", "cat"]
 
 def print_pet(animal):
-        print("Name - " + animal["name"] + " | Kind - " + animal["kind"] + " | Urgency - ", animal["urgency"])
+        print("Name - " + animal["name"] + " | Kind - " + animal["kind"] + " | Urgency - ", animal["urgency"]) 
 
 
 
@@ -47,7 +47,7 @@ def vet_function():
                         if len(check_out_info) == 0:
                                 print("There are no pets in the system at this time.")
                         elif len(check_out_info) >= 1:
-                                for i in range(0, len(check_out_info)):
+                                for i in range(0, len(check_out_info)-1):
                                         print_pet(i)
 
                 elif start == "4":
@@ -109,3 +109,4 @@ def vet_function():
 
 
 vet_function()
+
