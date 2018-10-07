@@ -70,7 +70,12 @@ def vet_function():
 
 
                 elif start == "5":
-                        if len(check_out_info) > 1:
+                        if len(check_out_info) == 1: 
+                            print_pet(check_out_info[0])
+                        elif len(check_out_info) < 1:
+                            print("Sorry there are no pets checked in a this time")
+                            vet_function()
+                        else:
                                 least_urgent = [check_out_info[0]]
                                 for i in range(1, len(check_out_info)):
                                     if check_out_info[i]["urgency"] > least_urgent[0]["urgency"]:
@@ -81,23 +86,18 @@ def vet_function():
                                         least_urgent = check_out_info[i]
                                 for animal in most_urgent:
                                     print_pet(animal)
-                        elif len(check_out_info) == 1: 
-                            print_pet(check_out_info[0])
-                        else:
-                            print("Sorry there are no pets checked in a this time")
-                            vet_function()
 
                 elif start == "6":
-                        if len(check_out_info) > 0:
+                        if len(check_out_info) < 0:
+                            print("Sorry there are no pets checked in a this time")
+                            vet_function()
+                        else:
                             find_name = input("What is the name of the pet you would like to find?\n")
                             for i in range(0, len(check_out_info)):
                                 if (check_out_info[i]["name"]) == find_name:
                                     print_pet(check_out_info[i])
                                 elif (check_out_info[i]["name"]) != find_name:
                                     print("That pet is not checked in.")
-                        else:
-                            print("Sorry there are no pets checked in a this time")
-                            vet_function()
 
                 elif start == "7":
                     break
@@ -109,3 +109,4 @@ def vet_function():
 
                 print()
 vet_function()
+
