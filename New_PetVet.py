@@ -47,7 +47,7 @@ def vet_function():
                         if len(check_out_info) == 0:
                                 print("There are no pets in the system at this time.")
                         else:
-                                for i in range(0, len(check_out_info)):
+                                for i in check_out_info:
                                         print_pet(i)
 
                 elif start == "4":
@@ -64,7 +64,6 @@ def vet_function():
                                                 most_urgent.append(check_out_info[i])
                                         elif check_out_info[i]["urgency"] > most_urgent[0]["urgency"]:
                                                 most_urgent = check_out_info[i]
-                                print(most_urgent)
                                 for animal in most_urgent:
                                         print_pet(animal)
 
@@ -91,7 +90,7 @@ def vet_function():
                         if len(check_out_info) < 0:
                             print("Sorry there are no pets checked in a this time")
                             vet_function()
-                        else:
+                        
                             find_name = input("What is the name of the pet you would like to find?\n")
                             for i in range(0, len(check_out_info)):
                                 if (check_out_info[i]["name"]) == find_name:
