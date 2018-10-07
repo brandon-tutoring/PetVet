@@ -57,7 +57,7 @@ def vet_function():
                                 print_pet(check_out_info[0])
                         else:
                                 most_urgent = [check_out_info[0]]
-                                for i in range(1, len(check_out_info)):
+                                for i in range(1, len(check_out_info-1)):
                                         if check_out_info[i]["urgency"] < most_urgent[0]["urgency"]:
                                                 continue
                                         elif check_out_info[i]["urgency"] == most_urgent[0]["urgency"]:
@@ -76,15 +76,15 @@ def vet_function():
                             vet_function()
                         else:
                                 least_urgent = [check_out_info[0]]
-                                for i in range(1, len(check_out_info)):
+                                for i in range(1, len(check_out_info-1)):
                                     if check_out_info[i]["urgency"] > least_urgent[0]["urgency"]:
                                         vet_function()
                                     elif check_out_info[i]["urgency"] == least_urgent[0]["urgency"]:
                                         least_urgent.append(check_out_info[i])
                                     elif check_out_info[i]["urgency"] < least_urgent[0]["urgency"]:
                                         least_urgent = check_out_info[i]
-                                for animal in most_urgent:
-                                    print_pet(animal)
+                                for item in least_urgent:
+                                    print_pet(item)
 
                 elif start == "6":
                         if len(check_out_info) < 0:
@@ -108,4 +108,3 @@ def vet_function():
 
                 print()
 vet_function()
-
