@@ -102,10 +102,10 @@ def vet_function():
                             print()
                             vet_function()
                         
-                        find_name = input("What is the name of the pet you would like to find?\n").strip()
+                        find_name = input("What is the name of the pet you would like to find?\n").strip() .lower()
                         animal_name = []
                         for i in range(0, len(check_out_info)):
-                                if (check_out_info[i]["name"]) == find_name:
+                                if (check_out_info[i]["name"]) == find_name.lower():
                                         animal_name.append(check_out_info[i])
                         if (len(animal_name)) == 0:
                                 print("That pet is not checked in.")
